@@ -1,6 +1,6 @@
 class Emqx < Formula
   homepage "https://emqx.io"
-  url "https://github.com/emqx/emqx/releases/download/v3.0.1/emqx-macosx-v3.0.1.zip"
+  url "http://139.198.122.143/emqx-macos-v3.0.1.zip"
 
   def install
     prefix.install Dir["*"]
