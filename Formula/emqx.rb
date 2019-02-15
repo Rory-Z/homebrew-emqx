@@ -7,6 +7,9 @@ class Emqx < Formula
     prefix.install Dir["*"]
     bin.install Dir[libexec/"/bin/emqx"]
     rm %W[#{bin}/emqx.cmd #{bin}/emqx_ctl.cmd]
+  end
+
+  def post_install
     system "mkdir", "-p", "#{prefix}/data/configs"
   end
 
