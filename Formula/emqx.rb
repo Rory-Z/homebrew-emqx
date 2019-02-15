@@ -9,10 +9,6 @@ class Emqx < Formula
     rm %W[#{bin}/emqx.cmd #{bin}/emqx_ctl.cmd]
   end
 
-  def post_install
-    system "mkdir", "-p", "#{prefix}/data/configs"
-  end
-
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
@@ -36,6 +32,10 @@ class Emqx < Formula
       </dict>
     </plist>
     EOS
+  end
+
+  def post_install
+    system "mkdir", "-p", "#{prefix}/data/configs"
   end
 
   test do
