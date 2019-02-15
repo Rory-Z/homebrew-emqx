@@ -5,7 +5,7 @@ class Emqx < Formula
   def install
     prefix.install Dir["*"]
     bin.install Dir[libexec/"/bin/emqx"]
-    system "madir", "-p", "#{data}/configs"
+    system "madir", "-p", "#{prefix}/data/configs"
     rm %W[#{bin}/emqx.cmd #{bin}/emqx_ctl.cmd]
   end
 
